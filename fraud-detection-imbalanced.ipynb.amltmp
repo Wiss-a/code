@@ -19,19 +19,58 @@
     {
       "cell_type": "code",
       "source": [
-        "pip install numpy pandas matplotlib seaborn scikit-learn imbalanced-learn\n"
+        "pip install pandas matplotlib seaborn scikit-learn imbalanced-learn\n"
       ],
       "outputs": [
         {
           "output_type": "stream",
           "name": "stdout",
-          "text": "Requirement already satisfied: numpy in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (2.2.6)\nRequirement already satisfied: pandas in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (2.3.1)\nRequirement already satisfied: matplotlib in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (3.10.8)\nCollecting seaborn\n  Downloading seaborn-0.13.2-py3-none-any.whl.metadata (5.4 kB)\nCollecting scikit-learn\n  Downloading scikit_learn-1.7.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (11 kB)\nCollecting imbalanced-learn\n  Downloading imbalanced_learn-0.14.1-py3-none-any.whl.metadata (8.9 kB)\nRequirement already satisfied: python-dateutil>=2.8.2 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from pandas) (2.9.0.post0)\nRequirement already satisfied: pytz>=2020.1 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from pandas) (2025.2)\nRequirement already satisfied: tzdata>=2022.7 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from pandas) (2025.2)\nRequirement already satisfied: contourpy>=1.0.1 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from matplotlib) (1.3.2)\nRequirement already satisfied: cycler>=0.10 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from matplotlib) (0.12.1)\nRequirement already satisfied: fonttools>=4.22.0 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from matplotlib) (4.61.1)\nRequirement already satisfied: kiwisolver>=1.3.1 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from matplotlib) (1.4.9)\nRequirement already satisfied: packaging>=20.0 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from matplotlib) (25.0)\nRequirement already satisfied: pillow>=8 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from matplotlib) (12.1.0)\nRequirement already satisfied: pyparsing>=3 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from matplotlib) (3.3.1)\nRequirement already satisfied: scipy>=1.8.0 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from scikit-learn) (1.15.3)\nCollecting joblib>=1.2.0 (from scikit-learn)\n  Downloading joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)\nCollecting threadpoolctl>=3.1.0 (from scikit-learn)\n  Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)\nCollecting sklearn-compat<0.2,>=0.1.5 (from imbalanced-learn)\n  Downloading sklearn_compat-0.1.5-py3-none-any.whl.metadata (20 kB)\nRequirement already satisfied: six>=1.5 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from python-dateutil>=2.8.2->pandas) (1.17.0)\nDownloading seaborn-0.13.2-py3-none-any.whl (294 kB)\nDownloading scikit_learn-1.7.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.7 MB)\n\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m9.7/9.7 MB\u001b[0m \u001b[31m68.1 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\n\u001b[?25hDownloading imbalanced_learn-0.14.1-py3-none-any.whl (235 kB)\nDownloading joblib-1.5.3-py3-none-any.whl (309 kB)\nDownloading sklearn_compat-0.1.5-py3-none-any.whl (20 kB)\nDownloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)\nInstalling collected packages: threadpoolctl, joblib, scikit-learn, sklearn-compat, seaborn, imbalanced-learn\n\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m6/6\u001b[0m [imbalanced-learn][imbalanced-learn]\n\u001b[1A\u001b[2KSuccessfully installed imbalanced-learn-0.14.1 joblib-1.5.3 scikit-learn-1.7.2 seaborn-0.13.2 sklearn-compat-0.1.5 threadpoolctl-3.6.0\nNote: you may need to restart the kernel to use updated packages.\n"
+          "text": "Requirement already satisfied: pandas in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (2.3.1)\nRequirement already satisfied: matplotlib in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (3.10.8)\nRequirement already satisfied: seaborn in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (0.13.2)\nRequirement already satisfied: scikit-learn in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (1.7.2)\nRequirement already satisfied: imbalanced-learn in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (0.14.1)\nRequirement already satisfied: numpy>=1.22.4 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from pandas) (1.23.5)\nRequirement already satisfied: python-dateutil>=2.8.2 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from pandas) (2.9.0.post0)\nRequirement already satisfied: pytz>=2020.1 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from pandas) (2025.2)\nRequirement already satisfied: tzdata>=2022.7 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from pandas) (2025.2)\nRequirement already satisfied: contourpy>=1.0.1 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from matplotlib) (1.3.2)\nRequirement already satisfied: cycler>=0.10 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from matplotlib) (0.12.1)\nRequirement already satisfied: fonttools>=4.22.0 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from matplotlib) (4.61.1)\nRequirement already satisfied: kiwisolver>=1.3.1 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from matplotlib) (1.4.9)\nRequirement already satisfied: packaging>=20.0 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from matplotlib) (25.0)\nRequirement already satisfied: pillow>=8 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from matplotlib) (12.1.0)\nRequirement already satisfied: pyparsing>=3 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from matplotlib) (3.3.1)\nRequirement already satisfied: scipy>=1.8.0 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from scikit-learn) (1.15.3)\nRequirement already satisfied: joblib>=1.2.0 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from scikit-learn) (1.5.3)\nRequirement already satisfied: threadpoolctl>=3.1.0 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from scikit-learn) (3.6.0)\nCollecting numpy>=1.22.4 (from pandas)\n  Using cached numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)\nRequirement already satisfied: sklearn-compat<0.2,>=0.1.5 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from imbalanced-learn) (0.1.5)\nRequirement already satisfied: six>=1.5 in /anaconda/envs/jupyter_env/lib/python3.10/site-packages (from python-dateutil>=2.8.2->pandas) (1.17.0)\nUsing cached numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)\nInstalling collected packages: numpy\n  Attempting uninstall: numpy\n    Found existing installation: numpy 1.23.5\n    Uninstalling numpy-1.23.5:\n      Successfully uninstalled numpy-1.23.5\nSuccessfully installed numpy-2.2.6\nNote: you may need to restart the kernel to use updated packages.\n"
         }
       ],
-      "execution_count": 2,
+      "execution_count": 1,
       "metadata": {
         "gather": {
-          "logged": 1767533094986
+          "logged": 1767543299205
+        }
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "pip install numpy==1.25.2\n"
+      ],
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "Collecting numpy==1.25.2\n  Downloading numpy-1.25.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.6 kB)\nDownloading numpy-1.25.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.2 MB)\n\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m18.2/18.2 MB\u001b[0m \u001b[31m70.6 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m \u001b[36m0:00:01\u001b[0m\n\u001b[?25hInstalling collected packages: numpy\n  Attempting uninstall: numpy\n    Found existing installation: numpy 1.23.5\n    Uninstalling numpy-1.23.5:\n      Successfully uninstalled numpy-1.23.5\nSuccessfully installed numpy-1.25.2\nNote: you may need to restart the kernel to use updated packages.\n"
+        }
+      ],
+      "execution_count": 5,
+      "metadata": {
+        "gather": {
+          "logged": 1767543423196
+        }
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "print(np.__version__) "
+      ],
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "1.25.2\n"
+        }
+      ],
+      "execution_count": 1,
+      "metadata": {
+        "gather": {
+          "logged": 1767543440466
         }
       }
     },
@@ -50,7 +89,7 @@
       "execution_count": 2,
       "metadata": {
         "gather": {
-          "logged": 1767540661349
+          "logged": 1767543373860
         }
       }
     },
@@ -71,10 +110,10 @@
           "text": "✅ MLflow is available for experiment tracking\n"
         }
       ],
-      "execution_count": 4,
+      "execution_count": 2,
       "metadata": {
         "gather": {
-          "logged": 1767540931944
+          "logged": 1767543448889
         }
       }
     },
@@ -104,10 +143,10 @@
           "text": "✓ All libraries imported successfully!\n"
         }
       ],
-      "execution_count": 11,
+      "execution_count": 3,
       "metadata": {
         "gather": {
-          "logged": 1767542295462
+          "logged": 1767543452015
         }
       }
     },
@@ -151,10 +190,10 @@
           "metadata": {}
         }
       ],
-      "execution_count": 12,
+      "execution_count": 4,
       "metadata": {
         "gather": {
-          "logged": 1767542313209
+          "logged": 1767543469799
         }
       }
     },
@@ -193,10 +232,10 @@
           "metadata": {}
         }
       ],
-      "execution_count": 13,
+      "execution_count": 5,
       "metadata": {
         "gather": {
-          "logged": 1767542315414
+          "logged": 1767543483060
         }
       }
     },
@@ -215,10 +254,10 @@
         "y = df['isFraud']"
       ],
       "outputs": [],
-      "execution_count": 14,
+      "execution_count": 6,
       "metadata": {
         "gather": {
-          "logged": 1767542319423
+          "logged": 1767543487209
         }
       }
     },
@@ -228,10 +267,10 @@
         "X = pd.get_dummies(X, columns=['type'], drop_first=True)\n"
       ],
       "outputs": [],
-      "execution_count": 15,
+      "execution_count": 7,
       "metadata": {
         "gather": {
-          "logged": 1767542322285
+          "logged": 1767543489570
         }
       }
     },
@@ -259,10 +298,10 @@
           "text": "Training set size: 5,090,096\nTest set size: 1,272,524\n\nFraud in training: 6570 (0.13%)\nFraud in test: 1643 (0.13%)\n"
         }
       ],
-      "execution_count": 16,
+      "execution_count": 8,
       "metadata": {
         "gather": {
-          "logged": 1767542326170
+          "logged": 1767543493302
         }
       }
     },
@@ -285,10 +324,10 @@
           "text": "✓ Features scaled successfully!\n"
         }
       ],
-      "execution_count": 17,
+      "execution_count": 10,
       "metadata": {
         "gather": {
-          "logged": 1767542331270
+          "logged": 1767543499841
         }
       }
     },
@@ -349,10 +388,10 @@
           "metadata": {}
         }
       ],
-      "execution_count": 18,
+      "execution_count": 11,
       "metadata": {
         "gather": {
-          "logged": 1767542333818
+          "logged": 1767543506847
         }
       }
     },
@@ -390,13 +429,13 @@
         {
           "output_type": "stream",
           "name": "stderr",
-          "text": "[Parallel(n_jobs=2)]: Using backend ThreadingBackend with 2 concurrent workers.\n[Parallel(n_jobs=2)]: Done  46 tasks      | elapsed:    1.1s\n[Parallel(n_jobs=2)]: Done 100 out of 100 | elapsed:    2.5s finished\n"
+          "text": "[Parallel(n_jobs=2)]: Using backend ThreadingBackend with 2 concurrent workers.\n[Parallel(n_jobs=2)]: Done  46 tasks      | elapsed:    1.2s\n[Parallel(n_jobs=2)]: Done 100 out of 100 | elapsed:    2.7s finished\n"
         }
       ],
-      "execution_count": 19,
+      "execution_count": 12,
       "metadata": {
         "gather": {
-          "logged": 1767542339561
+          "logged": 1767543518225
         }
       }
     },
@@ -420,13 +459,13 @@
         {
           "output_type": "stream",
           "name": "stderr",
-          "text": "[Parallel(n_jobs=2)]: Using backend ThreadingBackend with 2 concurrent workers.\n[Parallel(n_jobs=2)]: Done  46 tasks      | elapsed:    1.4s\n[Parallel(n_jobs=2)]: Done 100 out of 100 | elapsed:    3.0s finished\n[Parallel(n_jobs=2)]: Using backend ThreadingBackend with 2 concurrent workers.\n[Parallel(n_jobs=2)]: Done  46 tasks      | elapsed:    1.4s\n[Parallel(n_jobs=2)]: Done 100 out of 100 | elapsed:    3.0s finished\n"
+          "text": "[Parallel(n_jobs=2)]: Using backend ThreadingBackend with 2 concurrent workers.\n[Parallel(n_jobs=2)]: Done  46 tasks      | elapsed:    1.5s\n[Parallel(n_jobs=2)]: Done 100 out of 100 | elapsed:    3.2s finished\n[Parallel(n_jobs=2)]: Using backend ThreadingBackend with 2 concurrent workers.\n[Parallel(n_jobs=2)]: Done  46 tasks      | elapsed:    1.5s\n[Parallel(n_jobs=2)]: Done 100 out of 100 | elapsed:    3.2s finished\n"
         }
       ],
-      "execution_count": 20,
+      "execution_count": 13,
       "metadata": {
         "gather": {
-          "logged": 1767542348423
+          "logged": 1767543528154
         }
       }
     },
@@ -455,10 +494,10 @@
           "text": "======================================================================\nMODEL EVALUATION ON TEST SET (Real Imbalanced Distribution)\n======================================================================\n\nClassification Report:\n              precision    recall  f1-score   support\n\n  Legitimate       1.00      0.99      1.00   1270881\n       Fraud       0.13      0.99      0.23      1643\n\n    accuracy                           0.99   1272524\n   macro avg       0.57      0.99      0.62   1272524\nweighted avg       1.00      0.99      0.99   1272524\n\n"
         }
       ],
-      "execution_count": 21,
+      "execution_count": 14,
       "metadata": {
         "gather": {
-          "logged": 1767542348786
+          "logged": 1767543531102
         }
       }
     },
@@ -484,10 +523,10 @@
           "text": "\nConfusion Matrix:\n[[1260240   10641]\n [     10    1633]]\n\nTrue Negatives: 1,260,240\nFalse Positives: 10,641\nFalse Negatives: 10 ← (Missed Fraud - BAD)\nTrue Positives: 1,633 ← (Caught Fraud - GOOD)\n"
         }
       ],
-      "execution_count": 22,
+      "execution_count": 15,
       "metadata": {
         "gather": {
-          "logged": 1767542352975
+          "logged": 1767543534407
         }
       }
     },
@@ -516,10 +555,10 @@
           "text": "\n======================================================================\nKEY PERFORMANCE METRICS\n======================================================================\n🎯 ROC-AUC Score: 0.9996\n\nPrecision: 0.1330 (Of predicted fraud, how many were actually fraud?)\nRecall: 0.9939 (Of all actual fraud, how many did we catch?)\nF1-Score: 0.2347\n======================================================================\n"
         }
       ],
-      "execution_count": 23,
+      "execution_count": 16,
       "metadata": {
         "gather": {
-          "logged": 1767542355926
+          "logged": 1767543540206
         }
       }
     },
@@ -599,10 +638,10 @@
           "text": "✓ Visualizations saved as 'fraud_detection_results.png'\n"
         }
       ],
-      "execution_count": 24,
+      "execution_count": 17,
       "metadata": {
         "gather": {
-          "logged": 1767542362239
+          "logged": 1767543548990
         }
       }
     },
@@ -643,14 +682,8 @@
         "print(results_df.to_string(index=False))\n",
         "print(\"\\nNote: Lower threshold = catch more fraud but more false alarms\")"
       ],
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": "======================================================================\nTHRESHOLD ANALYSIS\n======================================================================\nTesting different probability thresholds to optimize recall...\n\nPerformance at Different Thresholds:\n Threshold Recall Precision F1-Score\n       0.3 0.9982    0.0694   0.1298\n       0.4 0.9963    0.0969   0.1765\n       0.5 0.9939    0.1330   0.2347\n       0.6 0.9890    0.1896   0.3182\n       0.7 0.9769    0.2872   0.4439\n\nNote: Lower threshold = catch more fraud but more false alarms\n"
-        }
-      ],
-      "execution_count": 25,
+      "outputs": [],
+      "execution_count": null,
       "metadata": {
         "gather": {
           "logged": 1767542363882
@@ -691,14 +724,8 @@
         "\"\"\")\n",
         "print(\"=\"*70)"
       ],
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": "\n======================================================================\nSUMMARY & RECOMMENDATIONS FOR YOUR TEACHER\n======================================================================\n\n✓ This model is trained on REAL data with minimal resampling\n✓ Uses class weights to handle imbalance naturally\n✓ Light undersampling (15% fraud) maintains realistic patterns\n✓ Evaluation focuses on RECALL (catching fraud) not accuracy\n✓ ROC-AUC and Precision-Recall curves show true performance\n✓ This approach mirrors real-world fraud detection systems\n\nKEY INSIGHT:\nA model trained on artificial 30/70 balance will FAIL in production\nwhen it encounters real 0.17% fraud rate. This model is trained for\nreality and will generalize to production environments.\n\nWHY SMOTE DOESN'T WORK:\n- Creates synthetic fraud patterns by interpolation\n- Real fraud has specific, rare patterns that shouldn't be averaged\n- Model learns to detect \"SMOTE fraud\" not real fraud\n- Production deployment would show immediate performance degradation\n\n======================================================================\n"
-        }
-      ],
-      "execution_count": 35,
+      "outputs": [],
+      "execution_count": null,
       "metadata": {
         "gather": {
           "logged": 1767534801568
@@ -721,14 +748,8 @@
         "joblib.dump(scaler, 'scaler.pkl')\n",
         "print(\"✓ Model and scaler saved!\")"
       ],
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": "✓ Model and scaler saved!\n"
-        }
-      ],
-      "execution_count": 27,
+      "outputs": [],
+      "execution_count": null,
       "metadata": {
         "gather": {
           "logged": 1767542375790
@@ -743,10 +764,28 @@
         "pickle.dump(scaler, open(\"scaler.pkl\", \"wb\"))"
       ],
       "outputs": [],
-      "execution_count": 26,
+      "execution_count": null,
       "metadata": {
         "gather": {
-          "logged": 1767542372271
+          "logged": 1767542500339
+        }
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pickle\n",
+        "import numpy as np\n",
+        "print(np.__version__)  # should print 1.23.5\n",
+        "\n",
+        "rf_model = pickle.load(open(\"fraud_detection_model.pkl\", \"rb\"))\n",
+        "print(\"Model loaded successfully!\")\n"
+      ],
+      "outputs": [],
+      "execution_count": null,
+      "metadata": {
+        "gather": {
+          "logged": 1767543186308
         }
       }
     }
