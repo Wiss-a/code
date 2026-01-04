@@ -69,10 +69,11 @@ input_scaled = scaler.transform(input_df)
 # ----------------------------
 pred_prob = rf_model.predict_proba(input_scaled)[0, 1]
 
-# Slider to adjust threshold
-threshold = st.slider("Set Fraud Detection Threshold", 0.0, 1.0, 0.01, 0.01)
+
+# Very low threshold for demo
+threshold = 0.002  # 0.2%
 pred_class = 1 if pred_prob >= threshold else 0
 
-st.write("### Prediction Results")
-st.write(f"**Fraud Probability:** {pred_prob*100:.2f}%")
-st.write(f"**Predicted Class:** {'Fraud 🚨' if pred_class==1 else 'Legitimate ✅'}")
+st.write(f"Fraud Probability: {pred_prob*100:.2f}%")
+st.write(f"Predicted Class: {'Fraud 🚨' if pred_class==1 else 'Legitimate ✅'}")
+
