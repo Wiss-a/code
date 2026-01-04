@@ -1,0 +1,4 @@
+step,amount,oldbalanceOrg,newbalanceOrig,oldbalanceDest,newbalanceDest,type_CASH_IN,type_CASH_OUT,type_DEBIT,type_PAYMENT,type_TRANSFER,balanceChange_orig,balanceChange_dest,amountToBalanceRatio_orig,isOriginEmpty,isDestEmpty,errorBalanceOrig,errorBalanceDest,actual_fraud,predicted_fraud,fraud_probability,prediction_category,prediction_result
+True,20128.0,20128.0,0.0,6268.0,12145.85,False,True,False,False,False,20128.0,5877.85,0.9999503204332059,1,0,0.0,-14250.15,True,True,0.9967168418950325,Haute Suspicion,Correct
+True,69490.69,9326.0,0.0,20093.0,67268.02,False,True,False,False,False,9326.0,47175.020000000004,7.450486758872092,1,0,-60164.69,-22315.67,False,True,0.842062855981009,Haute Suspicion,Faux Positif
+True,124832.65,128.0,0.0,4795.0,122027.28,False,True,False,False,False,128.0,117232.28,967.69496124031,1,0,-124704.65,-7600.369999999995,False,True,0.8067179230681767,Haute Suspicion,Faux Positif

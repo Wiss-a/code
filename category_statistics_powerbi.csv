@@ -1,0 +1,4 @@
+prediction_category,Count,Avg_Probability,Min_Probability,Max_Probability,Actual_Frauds
+Faible Suspicion,537,0.0156,0.0,0.4482,0
+Haute Suspicion,3,0.8818,0.8067,0.9967,1
+Suspicion Moyenne,2,0.7135,0.6927,0.7344,2
