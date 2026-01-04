@@ -280,80 +280,80 @@ if st.button("🔍 ANALYSER LA TRANSACTION", use_container_width=True):
             st.markdown("---")
             
             # Indicateurs d'anomalie
-            st.markdown("### 🔍 Indicateurs d'Anomalie Détectés")
+        #     st.markdown("### 🔍 Indicateurs d'Anomalie Détectés")
             
-            balance_change_orig = oldbalanceOrg - newbalanceOrig
-            balance_change_dest = newbalanceDest - oldbalanceDest
+        #     balance_change_orig = oldbalanceOrg - newbalanceOrig
+        #     balance_change_dest = newbalanceDest - oldbalanceDest
             
-            anomalies = []
+        #     anomalies = []
             
-            if abs(balance_change_orig - amount) > 0.01:
-                anomalies.append("⚠️ **Incohérence dans le solde du compte origine**")
+        #     if abs(balance_change_orig - amount) > 0.01:
+        #         anomalies.append("⚠️ **Incohérence dans le solde du compte origine**")
             
-            if abs(balance_change_dest - amount) > 0.01:
-                anomalies.append("⚠️ **Incohérence dans le solde du compte destinataire**")
+        #     if abs(balance_change_dest - amount) > 0.01:
+        #         anomalies.append("⚠️ **Incohérence dans le solde du compte destinataire**")
             
-            if newbalanceOrig == 0 and oldbalanceOrg > 0:
-                anomalies.append("🔴 **Le compte origine a été complètement vidé**")
+        #     if newbalanceOrig == 0 and oldbalanceOrg > 0:
+        #         anomalies.append("🔴 **Le compte origine a été complètement vidé**")
             
-            if amount / (oldbalanceOrg + 1) > 0.9:
-                anomalies.append("🔴 **La transaction représente plus de 90% du solde**")
+        #     if amount / (oldbalanceOrg + 1) > 0.9:
+        #         anomalies.append("🔴 **La transaction représente plus de 90% du solde**")
             
-            if oldbalanceDest == 0:
-                anomalies.append("⚠️ **Le compte destinataire avait un solde nul**")
+        #     if oldbalanceDest == 0:
+        #         anomalies.append("⚠️ **Le compte destinataire avait un solde nul**")
             
-            if len(anomalies) > 0:
-                for anomaly in anomalies:
-                    st.warning(anomaly)
-            else:
-                st.info("✅ Aucune anomalie majeure détectée dans les soldes")
+        #     if len(anomalies) > 0:
+        #         for anomaly in anomalies:
+        #             st.warning(anomaly)
+        #     else:
+        #         st.info("✅ Aucune anomalie majeure détectée dans les soldes")
             
-            st.markdown("---")
+        #     st.markdown("---")
             
-            # Recommandations
-            st.markdown("### 💡 Recommandations")
+        #     # Recommandations
+        #     st.markdown("### 💡 Recommandations")
             
-            if fraud_prob > 0.8:
-                st.error("""
-                **🚨 ACTIONS URGENTES REQUISES:**
-                - 🚫 **Bloquer immédiatement la transaction**
-                - 📞 **Contacter le client pour vérification d'identité**
-                - 🔒 **Geler temporairement le compte**
-                - 📝 **Créer un rapport d'incident détaillé**
-                - 👮 **Envisager d'informer les autorités si confirmé**
-                """)
-            elif fraud_prob > 0.5:
-                st.warning("""
-                **⚠️ ACTIONS DE VÉRIFICATION:**
-                - ⏸️ **Mettre la transaction en attente**
-                - ✅ **Demander une vérification d'identité secondaire**
-                - 📧 **Envoyer une notification au client**
-                - 📊 **Surveiller l'activité du compte pendant 24h**
-                """)
-            else:
-                st.success("""
-                **✅ TRANSACTION APPROUVÉE:**
-                - ✅ **Autoriser la transaction**
-                - 📊 **Enregistrer dans les logs de routine**
-                - 📈 **Continuer la surveillance normale**
-                """)
+        #     if fraud_prob > 0.8:
+        #         st.error("""
+        #         **🚨 ACTIONS URGENTES REQUISES:**
+        #         - 🚫 **Bloquer immédiatement la transaction**
+        #         - 📞 **Contacter le client pour vérification d'identité**
+        #         - 🔒 **Geler temporairement le compte**
+        #         - 📝 **Créer un rapport d'incident détaillé**
+        #         - 👮 **Envisager d'informer les autorités si confirmé**
+        #         """)
+        #     elif fraud_prob > 0.5:
+        #         st.warning("""
+        #         **⚠️ ACTIONS DE VÉRIFICATION:**
+        #         - ⏸️ **Mettre la transaction en attente**
+        #         - ✅ **Demander une vérification d'identité secondaire**
+        #         - 📧 **Envoyer une notification au client**
+        #         - 📊 **Surveiller l'activité du compte pendant 24h**
+        #         """)
+        #     else:
+        #         st.success("""
+        #         **✅ TRANSACTION APPROUVÉE:**
+        #         - ✅ **Autoriser la transaction**
+        #         - 📊 **Enregistrer dans les logs de routine**
+        #         - 📈 **Continuer la surveillance normale**
+        #         """)
             
-            # Détails techniques (optionnel, en expander)
-            with st.expander("🔧 Voir les détails techniques"):
-                st.markdown("**Features calculées:**")
+        #     # Détails techniques (optionnel, en expander)
+        #     with st.expander("🔧 Voir les détails techniques"):
+        #         st.markdown("**Features calculées:**")
                 
-                details = {
-                    "Variation solde origine": f"{balance_change_orig:,.2f} €",
-                    "Variation solde destination": f"{balance_change_dest:,.2f} €",
-                    "Ratio montant/solde origine": f"{amount / (oldbalanceOrg + 1):.4f}",
-                    "Compte origine vidé": "Oui" if newbalanceOrig == 0 else "Non",
-                    "Destination avec solde nul": "Oui" if oldbalanceDest == 0 else "Non",
-                    "Erreur balance origine": f"{balance_change_orig - amount:,.2f} €",
-                    "Erreur balance destination": f"{balance_change_dest - amount:,.2f} €"
-                }
+        #         details = {
+        #             "Variation solde origine": f"{balance_change_orig:,.2f} €",
+        #             "Variation solde destination": f"{balance_change_dest:,.2f} €",
+        #             "Ratio montant/solde origine": f"{amount / (oldbalanceOrg + 1):.4f}",
+        #             "Compte origine vidé": "Oui" if newbalanceOrig == 0 else "Non",
+        #             "Destination avec solde nul": "Oui" if oldbalanceDest == 0 else "Non",
+        #             "Erreur balance origine": f"{balance_change_orig - amount:,.2f} €",
+        #             "Erreur balance destination": f"{balance_change_dest - amount:,.2f} €"
+        #         }
                 
-                for key, value in details.items():
-                    st.text(f"{key}: {value}")
+        #         for key, value in details.items():
+        #             st.text(f"{key}: {value}")
         
         except Exception as e:
             st.error(f"❌ Erreur lors de la prédiction: {str(e)}")
