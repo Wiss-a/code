@@ -84,10 +84,8 @@ def load_model_and_scaler():
     try:
         # Essayer plusieurs chemins possibles
         possible_paths = [
-            ('outputs/best_model.pkl', 'outputs/scaler.pkl'),
-            ('best_model.pkl', 'scaler.pkl'),
-            ('./outputs/best_model.pkl', './outputs/scaler.pkl')
-        ]
+            ('fraud_detection_model.pkl', 'scaler.pkl')        
+             ]
         
         for model_path, scaler_path in possible_paths:
             if os.path.exists(model_path) and os.path.exists(scaler_path):
@@ -527,7 +525,7 @@ with tab3:
     - 📧 Email: votre.email@example.com
     - 💬 GitHub: github.com/votre-repo
     """)
-
+# =======================LKM=============================ljknl=========================
 st.markdown("---")
 st.markdown("""
 <div style='text-align: center; color: #7f8c8d;'>
