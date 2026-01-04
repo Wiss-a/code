@@ -43,14 +43,18 @@ newbalanceDest = st.number_input("Destination Account New Balance", min_value=0.
 # Prepare Data
 # ------------------------------
 # Create dataframe
-input_df = pd.DataFrame({
-    "amount": [amount],
-    "oldbalanceOrg": [oldbalanceOrg],
-    "newbalanceOrig": [newbalanceOrig],
-    "oldbalanceDest": [oldbalanceDest],
-    "newbalanceDest": [newbalanceDest],
-    "type": [tx_type]
-})
+# Example input
+input_df = pd.DataFrame([{
+    'step': 1,
+    'type': 'PAYMENT',   # must match your training data categories
+    'amount': 9839.64,
+    'oldbalanceOrg': 170136.0,
+    'newbalanceOrig': 160296.36,
+    'oldbalanceDest': 0.0,
+    'newbalanceDest': 0.0,
+    # 'isFraud' and 'isFlaggedFraud' are target columns -> not needed for prediction
+}])
+
 
 # Encode 'type' column (dummy variables)
 input_df = pd.get_dummies(input_df, columns=["type"], drop_first=True)
