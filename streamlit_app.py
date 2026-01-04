@@ -1,36 +1,24 @@
-# streamlit_app.py
-
 import streamlit as st
 import pandas as pd
-import numpy as np
 import pickle
 
-# --------------------------
-# 1. Load model, scaler, feature columns
-# --------------------------
+# Load trained artifacts
 rf_model = pickle.load(open("rf_model.pkl", "rb"))
 scaler = pickle.load(open("scaler.pkl", "rb"))
 feature_cols = pickle.load(open("feature_cols.pkl", "rb"))
 
-# --------------------------
-# 2. Streamlit UI
-# --------------------------
-st.title("💳 Fraud Detection in Financial Transactions")
+# Streamlit input form
+st.title("Fraud Detection Demo")
 
-st.write("Enter transaction details below to check if it's likely fraudulent:")
+step = st.number_input("Step", value=1)
+amount = st.number_input("Amount", value=5000.0)
+oldbalanceOrg = st.number_input("Old Balance Origin", value=200.0)
+newbalanceOrig = st.number_input("New Balance Origin", value=0.0)
+oldbalanceDest = st.number_input("Old Balance Destination", value=0.0)
+newbalanceDest = st.number_input("New Balance Destination", value=5000.0)
+txn_type = st.selectbox("Transaction Type", ['PAYMENT','TRANSFER','CASH_OUT','DEBIT','CASH_IN'])
 
-# User input
-step = st.number_input("Step (time unit)", min_value=0, value=1)
-amount = st.number_input("Amount", min_value=0.0, value=100.0)
-oldbalanceOrg = st.number_input("Old balance of origin account", min_value=0.0, value=0.0)
-newbalanceOrig = st.number_input("New balance of origin account", min_value=0.0, value=0.0)
-oldbalanceDest = st.number_input("Old balance of destination account", min_value=0.0, value=0.0)
-newbalanceDest = st.number_input("New balance of destination account", min_value=0.0, value=0.0)
-type_option = st.selectbox("Transaction Type", ["PAYMENT", "TRANSFER", "CASH_OUT", "CASH_IN", "DEBIT"])
-
-# --------------------------
-# 3. Create input DataFrame
-# --------------------------
+# Create DataFrame
 input_df = pd.DataFrame([{
     'step': step,
     'amount': amount,
@@ -38,36 +26,27 @@ input_df = pd.DataFrame([{
     'newbalanceOrig': newbalanceOrig,
     'oldbalanceDest': oldbalanceDest,
     'newbalanceDest': newbalanceDest,
-    'type': type_option
+    'type': txn_type
 }])
 
-# --------------------------
-# 4. Encode categorical columns
-# --------------------------
+# Dummy encode
 input_df = pd.get_dummies(input_df, columns=['type'], drop_first=True)
 
-# --------------------------
-# 5. Align columns with training
-# --------------------------
+# Add missing columns from training
 for col in feature_cols:
     if col not in input_df.columns:
-        input_df[col] = 0  # add missing dummy columns
+        input_df[col] = 0
 
 # Remove extra columns
 input_df = input_df[feature_cols]
 
-# --------------------------
-# 6. Scale features
-# --------------------------
+# Scale input
 input_scaled = scaler.transform(input_df)
 
-# --------------------------
-# 7. Make prediction
-# --------------------------
+# Prediction
 pred_prob = rf_model.predict_proba(input_scaled)[0, 1]
-pred_class = rf_model.predict(input_scaled)[0]
+threshold = 0.01  # demo-friendly
+pred_class = 1 if pred_prob >= threshold else 0
 
-st.write("---")
-st.subheader("Prediction Results")
-st.write(f"**Fraud Probability:** {pred_prob*100:.2f}%")
-st.write(f"**Predicted Class:** {'Fraud' if pred_class == 1 else 'Legitimate'}")
+st.write(f"Fraud Probability: {pred_prob*100:.2f}%")
+st.write(f"Predicted Class: {'Fraud' if pred_class==1 else 'Legitimate'}")
