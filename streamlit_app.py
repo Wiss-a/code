@@ -14,7 +14,7 @@ from sklearn.ensemble import RandomForestClassifier
 #   pickle.dump(rf_model, open("rf_model.pkl", "wb"))
 #   pickle.dump(scaler, open("scaler.pkl", "wb"))
 
-rf_model = pickle.load(open("rf_model.pkl", "rb"))
+rf_model = pickle.load(open("fraud_detection_model.pkl", "rb"))
 scaler = pickle.load(open("scaler.pkl", "rb"))
 
 # ------------------------------
