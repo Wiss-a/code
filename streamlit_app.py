@@ -56,14 +56,27 @@ input_df = pd.DataFrame({
 input_df = pd.get_dummies(input_df, columns=["type"], drop_first=True)
 
 # Make sure all expected columns exist (if some types are missing)
-expected_cols = rf_model.feature_names_in_  # features used in training
+# Define the features manually
+# Encode 'type' column (dummy variables)
+
+# Manually define columns used in training
+expected_cols = [
+    'step', 'amount', 'oldbalanceOrg', 'newbalanceOrig', 
+    'oldbalanceDest', 'newbalanceDest', 
+    'type_CASH_OUT', 'type_CASH_IN', 'type_DEBIT', 'type_PAYMENT', 'type_TRANSFER'
+]
+
+# Add missing columns
 for col in expected_cols:
     if col not in input_df.columns:
         input_df[col] = 0
+
+# Reorder columns to match training
 input_df = input_df[expected_cols]
 
 # Scale features
 input_scaled = scaler.transform(input_df)
+
 
 # ------------------------------
 # Predict Fraud
