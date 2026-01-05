@@ -104,7 +104,7 @@ def predict_fraud(model, scaler, features_dict):
 # Fonction pour créer les features à partir des inputs
 def create_features(step, type_transaction, amount, oldbalance_org, newbalance_orig, 
                    oldbalance_dest, newbalance_dest):
-    """Crée le dictionnaire de features à partir des inputs"""
+    """Crée le dictionnaire de features à partir des inputs """
     
     # Initialiser toutes les features
     features = {
