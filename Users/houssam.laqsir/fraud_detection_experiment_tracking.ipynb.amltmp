@@ -11,7 +11,6 @@
         "**Modèles testés**:\n",
         "1. Random Forest (baseline)\n",
         "2. Random Forest (optimisé)\n",
-        "3. Gradient Boosting\n",
         "4. XGBoost\n",
         "5. LightGBM\n",
         "\n",
@@ -44,7 +43,7 @@
           "logged": 1767643584020
         },
         "jupyter": {
-          "outputs_hidden": true
+          "outputs_hidden": false
         }
       }
     },
