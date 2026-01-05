@@ -10,4 +10,4 @@ xgboost
 lightgbm
 python-dotenv
 mlflow==3.8.1
- 
+joblib
